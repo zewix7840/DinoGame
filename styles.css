@@ -1,0 +1,34 @@
+:root { --bg:#fff; --fg:#222; --muted:#9aa0a6; }
+*{box-sizing:border-box}
+body{
+  margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background:var(--bg); color:var(--fg); display:flex; min-height:100vh; align-items:center; justify-content:center;
+}
+.wrap{display:flex; flex-direction:column; align-items:center; gap:.75rem; padding:12px}
+h1{font-size:clamp(16px,2.6vw,22px); margin:0; font-weight:700; letter-spacing:.5px}
+canvas{ touch-action: none; -ms-touch-action: none; width:min(92vw,920px); height:auto; aspect-ratio: 900 / 260; border:1px solid #e5e7eb; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.06);}    
+.hud{display:flex; gap:1rem; font-variant-numeric:tabular-nums}
+kbd{border:1px solid #ccc; border-bottom-width:2px; padding:.1rem .35rem; border-radius:6px; background:#f9fafb}
+
+/* mobile controls */
+.mobile-controls{display:none; gap:.5rem; margin-top:.5rem}
+.mobile-controls button{padding:.6rem 1rem; border-radius:10px; border:1px solid #ddd; background:#f6f7f9}
+@media (hover:none){ .mobile-controls{display:flex} }
+
+/* Theme chooser overlay */
+.theme-chooser{position:fixed;inset:0;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter: blur(1px);}
+.chooser-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.15);padding:18px 20px;max-width:360px;width:100%;text-align:center}
+.chooser-card h2{margin:0 0 8px 0;font-size:20px}
+.chooser-actions{display:flex;gap:10px;justify-content:center;margin-top:6px;margin-bottom:6px}
+.chooser-actions button{padding:.6rem 1rem;border-radius:10px;border:1px solid #ddd;background:#f6f7f9;cursor:pointer}
+.chooser-actions button#chooseDark{background:#0b1220;color:#eaf0ff;border-color:#101826}
+.hint{color:#6b7280;font-size:12px;margin:0;margin-top:4px}
+
+.hud-btn{padding:.35rem .6rem;border-radius:10px;border:1px solid #ddd;background:#f6f7f9;cursor:pointer}
+#btnTheme{margin-left:auto;}
+
+/* Mobile friendliness */
+body{ overscroll-behavior: none; -webkit-tap-highlight-color: transparent; }
+canvas, .hud, .mobile-controls, .hud *{ user-select: none; -webkit-user-select: none; -ms-user-select: none; }
+
+.perf-stat{align-self:center;color:#6b7280;font-size:12px;margin-right:6px}

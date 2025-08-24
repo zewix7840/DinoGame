@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dino Run</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <canvas id="game" width="900" height="260" aria-label="Google Dino-like game"></canvas>
+    <div class="hud">
+      <div>Управление:
+        <kbd>Space</kbd>/<kbd>↑</kbd> — прыжок,
+        <kbd>↓</kbd> — пригнуться,
+        <kbd>P</kbd> — пауза,
+        <kbd>R</kbd> — рестарт,
+        <kbd>M</kbd> — звук, <kbd>H</kbd> — хитбоксы
+        <span id="perfStat" class="perf-stat"></span>
+      <button id="btnPerf" class="hud-btn" title="Quality">⚙️ Auto</button>
+      <button id="btnTheme" class="hud-btn" title="Day/Night">🌓</button>
+    </div>
+    <div class="mobile-controls">
+      <button id="btnJump">Jump</button>
+      <button id="btnDuck">Duck</button>
+      <button id="btnRestart">R</button>
+    </div>
+  </div>
+  <div class="theme-chooser" id="themeChooser" aria-modal="true" role="dialog">
+    <div class="chooser-card">
+      <h2>Выбери режим</h2>
+      <div class="chooser-actions">
+        <button id="chooseLight">Светлый</button>
+        <button id="chooseDark">Тёмный</button>
+      </div>
+      <p class="hint">Сначала выбери стартовую тему — потом день и ночь будут чередоваться автоматически</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
